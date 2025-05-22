@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "help-me-m",
-    "slug": "help-me-m",
+    "name": "Help Me!",
+    "slug": "help-me-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
