@@ -1,7 +1,10 @@
+import { Input, InputField, InputIcon, InputSlot } from "@/components/ui/input";
 import { Text } from "@/components/ui/text";
+import { TextareaInput } from "@/components/ui/textarea";
 import { Helper } from "@/model/helper";
 import HelperCard from "@/ui-components/helperCard";
-import { FlatList,  SafeAreaView,  ScrollView } from "react-native";
+import { EyeOffIcon, Search } from "lucide-react-native";
+import { FlatList, SafeAreaView, ScrollView, TextInput } from "react-native";
 
 
 export default () => {
@@ -15,9 +18,20 @@ export default () => {
     return (
         <SafeAreaView className="flex-1">
 
-            <ScrollView className="flex-1 bg-primary-0 " contentContainerClassName="p-10">
+            <ScrollView className="flex-1 bg-primary-0 " contentContainerClassName="px-8 mt-10">
 
-                <Text className="text-4xl font-bold text-secondary-0">Homeeee</Text>
+                <Text className="text-3xl font-bold text-secondary-0 mb-3">Welcome </Text>
+                <Input
+                    variant="outline"
+                    size="xl"
+                    className="rounded-full h-16 mb-3">
+                    <InputField placeholder="Search for help..." />
+                    <InputSlot>
+                            <InputIcon as={Search} className="mr-2"/>
+                    </InputSlot>
+                </Input>
+                <Text className="text-2xl font-semibold text-secondary-0 mb-3">Recomended Helper</Text>
+
                 <FlatList
                     scrollEnabled={false}
                     data={helpers}
