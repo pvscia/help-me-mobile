@@ -4,11 +4,15 @@ import { HStack } from "@/components/ui/hstack";
 import { EyeIcon, EyeOffIcon } from "@/components/ui/icon";
 import { Image } from "@/components/ui/image";
 import { Input, InputField, InputIcon, InputSlot } from "@/components/ui/input";
+import { Switch } from "@/components/ui/switch";
 import { Text } from "@/components/ui/text";
+import { VStack } from "@/components/ui/vstack";
 import { Ionicons } from '@expo/vector-icons';
 import { Link, useRouter } from "expo-router";
 import { useState } from "react";
 import { SafeAreaView, ScrollView, TouchableOpacity } from "react-native";
+import colors from "tailwindcss/colors"
+
 
 
 export default function Register() {
@@ -59,7 +63,7 @@ export default function Register() {
                 <Input
                     variant="outline"
                     size="xl"
-                    className="rounded-lg h-16 p-2 mb-4">
+                    className="rounded-lg h-16 p-2 mb-1">
                     <InputField secureTextEntry={!showConfPassword} placeholder="Confirm Password..." />
                     <InputSlot>
                         <Button className="bg-transparent p-0" onPress={() => setShowConfPassword(!showConfPassword)}>
@@ -68,8 +72,18 @@ export default function Register() {
                     </InputSlot>
                 </Input>
 
+                <HStack className="align-center items-center mb-2">
+                    <Switch
+                        size="lg"
+                        trackColor={{ false: colors.neutral[300], true: colors.indigo[300] }}
+                              thumbColor={colors.indigo[500]}
+                        className="mr-2 " />
+                    <Text className="text-xl text-secondary-0 font-medium">Register as Helper</Text>
 
-                <Link href={{pathname:"/front-pages/email", params:{msg: "Check your mailbox to verify your email"}}} className="mb-2" asChild>
+                </HStack>
+
+
+                <Link href={{ pathname: "/front-pages/email", params: { msg: "Check your mailbox to verify your email" } }} className="mb-2" asChild>
                     <Button className="bg-tertiary-500 rounded-full h-16 lg w-100  ">
                         <ButtonText className="text-white text-lg sm:text-md font-semibold py-4">Register</ButtonText>
                     </Button>
